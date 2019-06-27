@@ -1,1 +1,114 @@
 # yesno
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JDHART</title>
+</head>
+<style>
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 15px;
+    padding: 14px 20px;
+    padding-top: 14px;
+    padding-right: 20px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    background-color: #0c0c0c;
+    background-color: rgba(12,12,12,0.6);
+    float: right;
+    text-decoration: none;
+    color: white;
+
+}
+
+.btns {
+  cursor:pointer;
+  text-decoration: none;
+  float: right;
+}
+.button1{
+	background-color:#0084ff;
+	color:white;
+	border: none;
+    border-radius: 2px;
+}
+.button2{
+	background-color:#385898;
+	color:white;
+	border: none;
+    border-radius: 2px;
+}
+.button3{
+	background-color:#1da1f2;
+	color:white;
+	border: none;
+    border-radius: 2px;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:white;
+  font-size: 70px;
+}
+
+.bg{
+	background-color: black;
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-size: contain;
+	background-position: fixed;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+</style>
+<body class="bg">
+	<div class="centered">
+		<h2 style="text-transform:uppercase;text-shadow: 0 0 800px rgba(0,0,0,0.25), 0 2px 2px rgba(0,0,0,0.5); font-family: Lucida Console"><strong></strong></h2>
+	</div>
+<img src="banner.png"
+	style="position: absolute;
+		   height: 88px;
+		   width: 200px;
+		   right:50%;
+		   margin-right: -100px;
+		   top:10px;
+		   opacity: 0.8;">
+
+<div class="footer">
+  <h1 style= "letter-spacing: 0.16em;opacity: 1;font-size:10px;color:white; float: left; font-family: Lucida Console; "> MADE BY LEE, JD , JUNBE, FRED:> • API?
+  </h1>
+<div class="btns">
+	<button class="button1">Message Us</button> 
+	<button class="button2">Share</button>
+	<button class="button3">Twitter</button>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+	$(".centered").hide(0).delay(500).fadeIn(3000)
+	$(".asd").hide(1)
+
+	$.getJSON('http://anyana.betaprojex.com/anyana.betaprojex.com/dev/', function(result){
+		let image = result.image
+		let answer = result.answer
+
+	$('h2').text(answer);
+	$('.bg').css("background-image", "url("+image+")");
+
+
+	console.log(result)
+});
+});
+</script>	
+
+</body>
+</html>
